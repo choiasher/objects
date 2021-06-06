@@ -1,0 +1,42 @@
+spring:
+  config:
+    activate:
+      on-profile: local
+springdoc:
+  version: '@project.version@'
+  api-docs:
+    path: /api-docs
+    uri: <a href="swagger-ui.html">OAS 3.0</a></br>
+  default-consumes-media-type: application/json
+  default-produces-media-type: application/json
+  swagger-ui:
+    operations-sorter: alpha
+    tags-sorter: alpha
+    path: /swagger-ui.html
+    disable-swagger-default-url: true
+    display-query-params-without-oauth2: true
+  paths-to-match:
+    - /api/v1/**
+    - /test/**
+
+---
+spring:
+  profiles:
+    active: local
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  jpa:
+    database-platform: H2
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+    properties.hibernate.dialect: org.hibernate.dialect.H2Dialect
+  h2:
+    console:
+      enabled: true
+  sql:
+    init:
+      platform: h2
