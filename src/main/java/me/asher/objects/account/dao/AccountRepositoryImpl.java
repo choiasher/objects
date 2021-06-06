@@ -2,7 +2,7 @@ package me.asher.objects.account.dao;
 
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.extern.slf4j.Slf4j;
-import me.asher.objects.account.domain.Account;
+import me.asher.objects.entity.Account;
 import org.springframework.data.jpa.repository.support.QuerydslRepositorySupport;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;

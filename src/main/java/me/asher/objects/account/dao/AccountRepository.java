@@ -1,6 +1,6 @@
 package me.asher.objects.account.dao;
 
-import me.asher.objects.account.domain.Account;
+import me.asher.objects.entity.Account;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 

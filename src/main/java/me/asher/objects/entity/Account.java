@@ -1,4 +1,4 @@
-package me.asher.objects.account.domain;
+package me.asher.objects.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

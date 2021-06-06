@@ -4,7 +4,7 @@ import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import me.asher.objects.account.application.AccountService;
-import me.asher.objects.account.domain.Account;
+import me.asher.objects.entity.Account;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
