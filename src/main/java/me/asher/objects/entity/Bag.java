@@ -1,12 +1,7 @@
 package me.asher.objects.entity;
 
-import lombok.Getter;
-import lombok.Setter;
-
 import java.math.BigDecimal;
 
-@Setter
-@Getter
 public class Bag {
     private BigDecimal amount;
     private Invitation invitation;
@@ -21,7 +16,7 @@ public class Bag {
         this.amount = amount;
     }
 
-    public boolean hasInvitation() {
+    private boolean hasInvitation() {
         return invitation != null;
     }
 
@@ -29,11 +24,28 @@ public class Bag {
         return ticket != null;
     }
 
-    public void minusAmount(BigDecimal amount) {
+    private void minusAmount(BigDecimal amount) {
         this.amount = this.amount.subtract(amount);
     }
 
     public void plusAmount(BigDecimal amount) {
         this.amount = this.amount.add(amount);
     }
+
+    private void setTicket(Ticket ticket) {
+        this.ticket = ticket;
+    }
+
+    public BigDecimal hold(Ticket ticket) {
+        if (hasInvitation()) {
+            setTicket(ticket);
+            return BigDecimal.ZERO;
+        } else {
+            setTicket(ticket);
+            BigDecimal fee = ticket.getFee();
+            minusAmount(fee);
+            return fee;
+        }
+    }
+
 }
